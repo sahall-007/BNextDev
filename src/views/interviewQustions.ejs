@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Questions</title>
+    <link rel="stylesheet" href="/css/output.css" />
+</head>
+<body class="bg-gray-50 min-h-screen py-8 px-4">
+    <div class="max-w-6xl mx-auto">
+        <!-- Header Section -->
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 gap-4">
+            <a type="button" href="topicIntroduction.ejs" class="flex items-center text-gray-600 hover:text-gray-800 transition self-start">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                Back to Topic
+            </a>
+            
+            <button id="postQuestionBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-5 rounded-md transition flex items-center justify-center self-start sm:self-auto">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                </svg>
+                Post a Question
+            </button>
+        </div>
+
+        <!-- Title and Description -->
+        <div class="mb-8">
+            <h1 class="text-4xl font-bold text-gray-900 mb-2">Interview Questions</h1>
+            <p class="text-gray-600">Master your tech stack with community-driven insights.</p>
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="flex flex-col sm:flex-row gap-3 mb-6">
+            <div class="flex-1 relative">
+                <svg class="w-5 h-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+                <input 
+                    type="text" 
+                    placeholder="Search questions..."
+                    class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-white"
+                />
+            </div>
+            <button class="bg-white hover:bg-gray-50 text-gray-700 font-medium py-3 px-5 rounded-md border border-gray-300 transition flex items-center justify-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/>
+                </svg>
+                Filter
+            </button>
+        </div>
+
+        <!-- Questions List -->
+        <div class="space-y-4">
+            <!-- Question Card 1 -->
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition">
+                <div class="flex gap-4">
+                    <!-- Vote Section -->
+                    <div class="flex flex-col items-center gap-1 flex-shrink-0">
+                        <button class="text-gray-400 hover:text-blue-600 transition p-1">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+                            </svg>
+                        </button>
+                        <span class="text-lg font-semibold text-gray-700">45</span>
+                    </div>
+
+                    <!-- Content Section -->
+                    <div class="flex-1 min-w-0">
+                        <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-3 mb-3">
+                            <h2 class="text-xl font-semibold text-gray-900 hover:text-blue-600 cursor-pointer transition">
+                                How do you install the Flutter SDK on macOS and set up the path?
+                            </h2>
+                            <span class="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full self-start whitespace-nowrap">
+                                EASY
+                            </span>
+                        </div>
+
+                        <div class="flex flex-wrap items-center gap-4 mb-4">
+                            <div class="flex items-center gap-2">
+                                <img src="https://ui-avatars.com/api/?name=Sarah+Chen&background=f97316&color=fff&size=32" alt="Sarah Chen" class="w-8 h-8 rounded-full">
+                                <span class="text-sm text-gray-600">By <span class="font-medium text-gray-900">Sarah Chen</span></span>
+                            </div>
+                            <button class="text-gray-400 hover:text-gray-600 transition flex items-center gap-1 text-sm">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                                </svg>
+                                Share
+                            </button>
+                        </div>
+
+                        <button onclick="toggleAccordion('accordion1')" class="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                            </svg>
+                            <span>2 Answers</span>
+                            <svg id="arrow1" class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+
+                        <!-- Accordion Content -->
+                        <div id="accordion1" class="hidden mt-4">
+                            <div class="border-t border-gray-200 pt-4 space-y-4">
+                                <!-- Answer 1 -->
+                                <div class="flex gap-3">
+                                    <img src="https://ui-avatars.com/api/?name=John+Doe&background=3b82f6&color=fff&size=32" alt="John Doe" class="w-8 h-8 rounded-full flex-shrink-0">
+                                    <div class="flex-1">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="font-semibold text-gray-900">John Doe</span>
+                                            <span class="text-gray-400 text-sm flex items-center gap-1">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+                                                </svg>
+                                                24
+                                            </span>
+                                        </div>
+                                        <p class="text-gray-700 mb-3">
+                                            First, download the SDK from the official website. Then, extract it to your preferred location (e.g., ~/development/flutter). Finally, add the flutter/bin directory to your PATH in your .zshrc or .bash_profile.
+                                        </p>
+                                        <div class="flex items-center gap-4">
+                                            <button class="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center gap-1">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/>
+                                                </svg>
+                                                Reply
+                                            </button>
+                                            <button class="text-gray-500 hover:text-gray-700 text-sm">Helpful?</button>
+                                        </div>
+
+                                        <!-- Nested Reply -->
+                                        <div class="mt-4 ml-6 pl-4 border-l-2 border-gray-200">
+                                            <div class="flex gap-3">
+                                                <img src="https://ui-avatars.com/api/?name=Jane+Smith&background=ec4899&color=fff&size=32" alt="Jane Smith" class="w-8 h-8 rounded-full flex-shrink-0">
+                                                <div class="flex-1">
+                                                    <span class="font-semibold text-gray-900">Jane Smith</span>
+                                                    <p class="text-gray-700 mt-1 mb-3">
+                                                        Make sure to use the 'export PATH="$PATH:[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin"' syntax!
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Answer 2 -->
+                                <div class="flex gap-3 pt-4 border-t border-gray-100">
+                                    <img src="https://ui-avatars.com/api/?name=Mike+Ross&background=8b5cf6&color=fff&size=32" alt="Mike Ross" class="w-8 h-8 rounded-full flex-shrink-0">
+                                    <div class="flex-1">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="font-semibold text-gray-900">Mike Ross</span>
+                                            <span class="text-gray-400 text-sm flex items-center gap-1">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+                                                </svg>
+                                                15
+                                            </span>
+                                        </div>
+                                        <p class="text-gray-700 mb-3">
+                                            You can also use 'fvm' (Flutter Version Management) for easier management of multiple SDK versions.
+                                        </p>
+                                        <div class="flex items-center gap-4">
+                                            <button class="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center gap-1">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/>
+                                                </svg>
+                                                Reply
+                                            </button>
+                                            <button class="text-gray-500 hover:text-gray-700 text-sm">Helpful?</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question Card 2 -->
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition">
+                <div class="flex gap-4">
+                    <!-- Vote Section -->
+                    <div class="flex flex-col items-center gap-1 flex-shrink-0">
+                        <button class="text-blue-600 hover:text-blue-700 transition p-1">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M5 15l7-7 7 7"/>
+                            </svg>
+                        </button>
+                        <span class="text-lg font-semibold text-blue-600">32</span>
+                    </div>
+
+                    <!-- Content Section -->
+                    <div class="flex-1 min-w-0">
+                        <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-3 mb-3">
+                            <h2 class="text-xl font-semibold text-gray-900 hover:text-blue-600 cursor-pointer transition">
+                                What are the common issues found when running 'flutter doctor' for the first time?
+                            </h2>
+                            <span class="bg-orange-100 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full self-start whitespace-nowrap">
+                                MEDIUM
+                            </span>
+                        </div>
+
+                        <div class="flex flex-wrap items-center gap-4 mb-4">
+                            <div class="flex items-center gap-2">
+                                <img src="https://ui-avatars.com/api/?name=Alex+Kumar&background=6366f1&color=fff&size=32" alt="Alex Kumar" class="w-8 h-8 rounded-full">
+                                <span class="text-sm text-gray-600">By <span class="font-medium text-gray-900">Alex Kumar</span></span>
+                            </div>
+                            <button class="text-gray-400 hover:text-gray-600 transition flex items-center gap-1 text-sm">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                                </svg>
+                                Share
+                            </button>
+                        </div>
+
+                        <button onclick="toggleAccordion('accordion2')" class="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                            </svg>
+                            <span>1 Answers</span>
+                            <svg id="arrow2" class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+
+                        <!-- Accordion Content -->
+                        <div id="accordion2" class="hidden mt-4">
+                            <div class="border-t border-gray-200 pt-4">
+                                <!-- Answer 1 -->
+                                <div class="flex gap-3">
+                                    <img src="https://ui-avatars.com/api/?name=Emily+Johnson&background=10b981&color=fff&size=32" alt="Emily Johnson" class="w-8 h-8 rounded-full flex-shrink-0">
+                                    <div class="flex-1">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="font-semibold text-gray-900">Emily Johnson</span>
+                                            <span class="text-gray-400 text-sm flex items-center gap-1">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+                                                </svg>
+                                                18
+                                            </span>
+                                        </div>
+                                        <p class="text-gray-700 mb-3">
+                                            Common issues include missing Android SDK, Xcode not installed, or command line tools not configured. Run 'flutter doctor' to see all requirements and follow the installation instructions for each missing component.
+                                        </p>
+                                        <div class="flex items-center gap-4">
+                                            <button class="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center gap-1">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/>
+                                                </svg>
+                                                Reply
+                                            </button>
+                                            <button class="text-gray-500 hover:text-gray-700 text-sm">Helpful?</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Post Question Modal -->
+    <div id="postQuestionModal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/40 backdrop-blur-sm">
+        <!-- Modal container -->
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-lg mx-4 overflow-hidden transform transition-all duration-300 scale-95 opacity-0" id="modalContent">
+            
+            <!-- Header -->
+            <div class="px-6 py-5 border-b border-gray-200">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xl font-semibold text-gray-900">Post to Community</h3>
+                    <button id="closeModalBtn" class="text-gray-400 hover:text-gray-600 transition focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+                <p class="mt-1 text-sm text-gray-500">
+                    Share an interview question you've encountered or think is important.
+                </p>
+            </div>
+
+            <!-- Body -->
+            <div class="px-6 py-6">
+                <div class="mb-5">
+                    <label for="questionInput" class="block text-sm font-medium text-gray-700 mb-2">
+                        Your Question
+                    </label>
+                    <textarea
+                        id="questionInput"
+                        rows="3"
+                        placeholder="e.g. How do you handle state in a large Flutter app?"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none resize-none text-gray-900 placeholder-gray-400"
+                    ></textarea>
+                </div>
+
+                <!-- Difficulty & Time (horizontal layout like screenshot) -->
+                <div class="grid grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Difficulty Level</label>
+                        <select class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none bg-white">
+                            <option>Easy</option>
+                            <option selected>Medium</option>
+                            <option>Hard</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Estimated Time</label>
+                        <select class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none bg-white">
+                            <option>5-10 mins</option>
+                            <option>10-20 mins</option>
+                            <option>20-40 mins</option>
+                            <option>40+ mins</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="px-6 py-5 bg-gray-50 border-t border-gray-200 flex justify-end gap-3">
+                <button id="cancelModalBtn" class="px-5 py-2.5 text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition font-medium">
+                    Cancel
+                </button>
+                <button class="px-6 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium shadow-sm">
+                    Submit Question
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            const arrowId = id.replace('accordion', 'arrow');
+            const arrow = document.getElementById(arrowId);
+            
+            content.classList.toggle('hidden');
+            arrow.classList.toggle('rotate-180');
+        }
+
+        const postBtn = document.getElementById('postQuestionBtn');
+        const modal = document.getElementById('postQuestionModal');
+        const modalContent = document.getElementById('modalContent');
+        const closeBtn = document.getElementById('closeModalBtn');
+        const cancelBtn = document.getElementById('cancelModalBtn');
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            modalContent.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Open modal when clicking "Post a Question"
+        document.querySelectorAll('button').forEach(btn => {
+            if (btn.textContent.includes('Post a Question')) {
+                btn.addEventListener('click', openModal);
+            }
+        });
+
+        // Close handlers
+        closeBtn.addEventListener('click', closeModal);
+        cancelBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+    </script>
+</body>
+</html>
